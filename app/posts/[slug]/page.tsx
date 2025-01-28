@@ -51,7 +51,7 @@ export default async function Post({
               </div>
             </div>
           </aside>
-          <article className="prose  lg:prose-xl">
+          <article className="prose max-w-2xl  lg:prose-xl">
             <MDXRemote source={content} />
           </article>
         </div>
