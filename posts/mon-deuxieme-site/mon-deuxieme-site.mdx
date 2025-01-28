@@ -1,0 +1,86 @@
+---
+title: "Créer un Site de Recettes avec TanStack Query et Next.js"
+description: "Retour sur la création de mon site de recettes, un projet personnel pour apprendre et maîtriser TanStack Query et Next.js. Découvrez les défis, les choix techniques et les apprentissages."
+date: "2025-01-28"
+tags: ["projet", "développement web", "Next.js", "TanStack Query", "recettes"]
+---
+
+# Créer un Site de Recettes avec TanStack Query et Next.js
+
+## Introduction
+
+Dans mon apprentissage continu du développement web, j’ai récemment décidé de créer un site de recettes. Pourquoi un site de recettes ? Parce qu’il me permettait de combiner une passion personnelle – la cuisine – avec des objectifs techniques précis : apprendre **Next.js** pour construire une application moderne et utiliser **TanStack Query** pour gérer efficacement les données côté client.
+
+Dans cet article, je vous partage mon expérience, les choix techniques que j’ai faits, les défis rencontrés et ce que j’ai appris.
+
+## Le Concept du Site
+
+L’idée était simple : créer un site où l’on peut :
+
+1. Parcourir des recettes via une liste ou un moteur de recherche.
+2. Voir les détails d’une recette avec des informations comme les ingrédients et les étapes.
+3. Ajouter et gérer ses propres recettes (fonctionnalité étendue prévue).
+
+Je voulais que l’interface soit rapide, interactive et agréable à utiliser, ce qui m’a conduit naturellement vers Next.js et TanStack Query.
+
+## Pourquoi Next.js et TanStack Query ?
+
+### Next.js
+
+Next.js est rapidement devenu un incontournable pour les développeurs web. J’ai choisi cet outil pour :
+
+- **Son système de rendu hybride** (Static Generation et Server-Side Rendering).
+- **Les API Routes**, parfaites pour intégrer rapidement un backend léger.
+- **La simplicité du routing dynamique**, essentiel pour gérer les pages de détail des recettes.
+
+### TanStack Query
+
+TanStack Query (anciennement React Query) s’est imposé pour :
+
+- **Sa gestion optimisée du cache**, permettant de réduire les requêtes inutiles.
+- **Son approche déclarative**, qui simplifie la récupération et la mise à jour des données.
+- **Son support des requêtes côté serveur**, ce qui complétait parfaitement Next.js.
+
+## La Création du Projet
+
+### Initialisation et Stack Technique
+
+J’ai démarré le projet avec Create Next App pour poser les bases. Voici les principales technologies utilisées :
+
+- **Next.js** : Framework principal.
+- **TanStack Query** : Gestion des requêtes et du cache.
+- **Tailwind CSS** : Pour un design rapide et efficace.
+- **MockAPI** : Pour simuler une base de données dans un premier temps.
+
+### Fonctionnalités Clés
+
+#### 1. **Affichage des Recettes**
+
+J’ai mis en place une page d’accueil qui affiche une liste de recettes récupérées via une API. Grâce à TanStack Query, les données sont mises en cache pour accélérer la navigation.
+
+```jsx
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
+const fetchRecipes = async () => {
+  const { data } = await axios.get("/api/recipes");
+  return data;
+};
+
+export default function Home() {
+  const { data: recipes, isLoading } = useQuery(["recipes"], fetchRecipes);
+
+  if (isLoading) return <p>Chargement...</p>;
+
+  return (
+    <div className="grid grid-cols-1 gap-4 md\:grid-cols-3">
+      {recipes.map((recipe) => (
+        <div key={recipe.id} className="p-4 border rounded-lg">
+          <h2 className="text-xl font-semibold">{recipe.name}</h2>
+          <p>{recipe.description}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
