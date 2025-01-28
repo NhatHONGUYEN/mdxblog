@@ -23,13 +23,12 @@ export default function Home() {
         </div>
 
         {/* Contenu : catégories, tags et posts */}
-        <div className="mx-auto mt-20 grid max-w-screen-xl grid-cols-1 gap-20 lg:grid-cols-4">
-          <CategoryAndTagFilter
-            categories={categories}
-            tags={tags}
-            posts={posts}
-          />
-        </div>
+
+        <CategoryAndTagFilter
+          categories={categories}
+          tags={tags}
+          posts={posts}
+        />
       </div>
     </section>
   );
