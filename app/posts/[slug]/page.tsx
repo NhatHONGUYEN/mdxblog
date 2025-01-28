@@ -21,7 +21,7 @@ export default async function Post({
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { content, data } = matter(fileContent);
 
-  const { description, date } = data;
+  const { title, date } = data;
 
   return (
     <section className="py-32">
@@ -35,23 +35,23 @@ export default async function Post({
               <ChevronLeft className="h-full w-4" />
               Return to home
             </Link>
-            <h1 className="mb-5 text-balance text-3xl font-bold lg:text-4xl">
-              {description}
-            </h1>
+            <div className="mb-5 text-balance text-3xl font-bold lg:text-4xl">
+              {title}
+            </div>
             <div className="flex gap-3">
-              <Avatar className="size-7 rounded-full">
+              <Avatar className="size-20 rounded-full">
                 <AvatarImage
-                  src="https://shadcnblocks.com/images/block/avatar-1.webp"
+                  src="https://res.cloudinary.com/nhatflux/image/upload/c_crop,g_auto,h_800,w_800/idii5lwwpxknebuusbqe"
                   alt="placeholder"
                 />
               </Avatar>
-              <div>
-                <h2 className="font-semibold">John Doe</h2>
+              <div className="flex flex-col justify-center ">
                 <p className="text-xs text-muted-foreground">{date}</p>
+                <h2 className="prose ">Nhat-Quan HO NGUYEN</h2>
               </div>
             </div>
           </aside>
-          <article className="prose lg:prose-xl">
+          <article className="prose  lg:prose-xl">
             <MDXRemote source={content} />
           </article>
         </div>
