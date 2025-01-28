@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 
 import { Badge } from "@/components/ui/badge";
-import { CategoryFilter } from "@/components/CategoryFilter";
+import { CategoryAndTagFilter } from "@/components/CategoryAndTagFilter";
 
 export default function Home() {
   const postsDirectory = path.join(process.cwd(), "posts");
@@ -49,6 +49,8 @@ export default function Home() {
     ),
   ].sort();
 
+  const tags = [...new Set(posts.flatMap((post) => post.tags || []))].sort();
+
   // Ensure the categories are correctly passed to the CategoryFilter component
   return (
     <section className="py-32">
@@ -67,7 +69,11 @@ export default function Home() {
 
         <div className="mx-auto mt-20 grid max-w-screen-xl grid-cols-1 gap-20 lg:grid-cols-4">
           {/* Le composant CategoryFilter est utilisé ici */}
-          <CategoryFilter categories={categories} posts={posts} />
+          <CategoryAndTagFilter
+            categories={categories}
+            tags={tags}
+            posts={posts}
+          />
         </div>
       </div>
     </section>
