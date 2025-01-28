@@ -14,7 +14,7 @@ export function CategoryAndTagFilter({ categories, tags, posts }: FilterProps) {
   const filteredPosts = filterPosts(posts, selectedCategory, selectedTag);
 
   return (
-    <div className="mx-auto mt-20 grid max-w-screen-xl grid-cols-1 gap-20 lg:grid-cols-4">
+    <div className="mx-auto mt-20 grid grid-cols-1 gap-20 lg:grid-cols-4">
       <div className="hidden flex-col gap-6 lg:flex">
         <Category
           categories={categories}

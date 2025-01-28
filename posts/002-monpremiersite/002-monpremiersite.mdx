@@ -1,0 +1,129 @@
+---
+title: "Mon Premier Site avec React et Styled-Components"
+description: "Retour sur la création de mon tout premier site web. J'ai utilisé React et styled-components en me basant sur une maquette Figma. Découvrez les défis rencontrés, notamment le responsive et la gestion des styles."
+date: "2025-01-28"
+tags: ["projet", "React", "styled-components", "développement web", "débutant"]
+category: ["premier projet", "apprentissage", "développement"]
+---
+
+_Mon Premier Site avec React et Styled-Components_
+
+# Introduction
+
+Comme beaucoup de développeurs débutants, j'ai voulu me lancer dans la création de mon premier site web en m’appuyant sur une maquette que j’avais récupérée sur Figma. Mon objectif ? Reproduire fidèlement le design tout en apprenant à utiliser **React** et **styled-components** pour gérer les styles de manière modulaire.
+
+Cependant, ce projet s'est rapidement transformé en une série de défis qui m'ont poussé à revoir mes attentes, notamment sur des aspects comme le **responsive design**, la gestion des **selectors**, et la structure de mon fichier de styles.
+
+Dans cet article, je vais vous partager mon expérience : mes choix, les difficultés rencontrées, et ce que j'en ai appris.
+
+<div className="prose prose-base mt-10">
+
+## Le Projet : Reproduire une Maquette Figma
+
+J’avais récupéré une belle maquette sur **Figma**, avec des sections bien définies : un header, une galerie d’images, une section "à propos" et un footer. L'objectif était simple : **reproduire la maquette le plus fidèlement possible**.
+
+Au début, tout semblait facile : j’utilisais React pour structurer mes composants, et j’avais choisi **styled-components** pour encapsuler les styles dans chaque composant. Mais très vite, des problèmes ont commencé à apparaître.
+
+</div>
+
+<div className="prose prose-base mt-16">
+
+## Les Défis Rencontrés
+
+##1. Le Responsive Design : Une Galère Monumentale
+
+Reproduire la maquette sur un écran desktop était faisable, mais dès qu'il fallait adapter le site pour les petits écrans, ça devenait un casse-tête.
+
+J’ai dû jongler avec les media queries dans styled-components :
+
+- Les breakpoints étaient difficiles à gérer parce que je n’avais pas encore de système bien défini.
+- Tester les changements prenait un temps fou.
+- Ce qui fonctionnait pour un écran de 375px cassait sur un écran de 768px.
+
+En bref, il me fallait parfois une semaine pour rendre une seule section responsive !
+
+```jsx
+const GalleryContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+`;
+```
+
+</div>
+
+<div className="prose prose-base mt-16">
+
+Malgré ces efforts, je n’étais jamais satisfait du rendu. Il y avait toujours quelque chose qui clochait : des images mal redimensionnées, des marges incohérentes…
+
+## 2. Les Selectors dans Styled-Components : Un Cauchemar
+
+Je voulais que chaque composant ait un style unique tout en respectant la structure de la maquette. Mais dès que je devais gérer des interactions (par exemple, hover, focus), le fichier devenait rapidement énorme et illisible.
+
+```jsx
+const Button = styled.button`
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+  }
+`;
+```
+
+  </div>
+
+## La Création du Projet
+
+Au fur et à mesure que le projet avançait, les styles prenaient tellement de place que mon fichier faisait plusieurs centaines de lignes pour un seul composant ! C'était démotivant et difficile à maintenir.
+
+3. Manque de Structure dans les Styles
+
+Je ne connaissais pas encore les bonnes pratiques pour organiser mes fichiers. Résultat :
+
+- J'avais des fichiers avec un mélange de logique React et de styles CSS.
+- Rien n’était réutilisable, ce qui m’obligeait à copier-coller du code à chaque fois.
+
+<div className="prose prose-base mt-16">
+## Ce Que J'ai Appris
+
+1. **L'Importance d'une Bonne Organisation**
+
+J’ai compris qu’il fallait structurer mon code dès le départ pour éviter d’être débordé. Cela inclut :
+
+- Séparer les styles dans des fichiers dédiés.
+- Réutiliser des composants quand c'est possible.
+
+2. **Le Responsive, Ça S'Anticipe**
+
+Plutôt que de travailler le responsive après coup, il vaut mieux le prendre en compte dès le début en utilisant une grille bien pensée et en définissant des breakpoints clairs.
+
+3. **La Simplicité Avant Tout**
+
+J’ai appris à simplifier mes composants et à éviter d’ajouter trop de détails d’un coup. Parfois, il vaut mieux se concentrer sur une seule fonctionnalité et l’améliorer progressivement.
+
+  </div>
+
+# Conclusion
+
+Même si ce projet était difficile et parfois frustrant, il m’a beaucoup appris sur les bases du développement web. J’ai compris que le design n’est pas seulement une question de pixels : il s'agit aussi de structure, d’organisation et de réflexion sur l’expérience utilisateur.
+
+Aujourd’hui, je regarde ce premier site avec un mélange de fierté et d’humilité. Il n’est pas parfait, mais il représente une étape importante dans mon apprentissage. Et malgré les galères, je suis motivé à continuer à progresser !
