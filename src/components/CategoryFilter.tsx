@@ -29,12 +29,25 @@ export function CategoryFilter({ categories, posts }: CategoryFilterProps) {
           ? post.category.includes(selectedCategory)
           : post.category === selectedCategory
       )
-    : posts;
+    : posts; // Si aucune catégorie n'est sélectionnée, montrer tous les posts
 
   return (
     <>
       {/* Barre latérale des catégories */}
       <div className="hidden flex-col gap-2 lg:flex">
+        {/* Bouton pour "Toutes les catégories" */}
+        <Button
+          variant="ghost"
+          onClick={() => setSelectedCategory(null)}
+          className={`justify-start text-left ${
+            selectedCategory === null
+              ? "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+              : ""
+          }`}
+        >
+          Toutes les catégories
+        </Button>
+
         {categories.map((category) => (
           <Button
             variant="ghost"
