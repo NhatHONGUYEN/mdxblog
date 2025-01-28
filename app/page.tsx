@@ -1,45 +1,55 @@
 import fs from "fs";
 import path from "path";
-import Link from "next/link";
 import matter from "gray-matter";
 
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { CategoryFilter } from "@/components/CategoryFilter";
 
 export default function Home() {
   const postsDirectory = path.join(process.cwd(), "posts");
-  const directories = fs.readdirSync(postsDirectory); // Liste les dossiers
+  const directories = fs.readdirSync(postsDirectory);
 
   const posts = directories
     .map((directory) => {
       const postDir = path.join(postsDirectory, directory);
-      if (!fs.statSync(postDir).isDirectory()) return null; // Ignore si ce n'est pas un dossier
+      if (!fs.statSync(postDir).isDirectory()) return null;
 
-      const files = fs.readdirSync(postDir); // Liste les fichiers dans le dossier
-      const mdxFile = files.find((file) => file.endsWith(".mdx")); // Trouve le .mdx
+      const files = fs.readdirSync(postDir);
+      const mdxFile = files.find((file) => file.endsWith(".mdx"));
 
-      if (!mdxFile) return null; // Ignore si pas de fichier .mdx
+      if (!mdxFile) return null;
 
       const filePath = path.join(postDir, mdxFile);
       const fileContents = fs.readFileSync(filePath, "utf8");
       const { data } = matter(fileContents);
 
       return {
-        slug: directory, // Utilise le nom du dossier comme slug
+        slug: directory,
         title: data.title,
         date: data.date,
         description: data.description || null,
-        author: data.author || null,
+        tags: data.tags || [],
+        category: data.category,
       };
     })
-    .filter(Boolean); // Supprime les valeurs nulles
+    .filter((post): post is NonNullable<typeof post> => post !== null);
 
-  // Trier les posts par date, du plus récent au plus ancien
+  // Trier les posts par date
   posts.sort((a, b) => {
-    if (!b || !a) return 0;
+    if (!a || !b) return 0;
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 
+  // Extraire les catégories uniques
+  const categories = [
+    ...new Set(
+      posts.flatMap((post) =>
+        Array.isArray(post.category) ? post.category : [post.category]
+      )
+    ),
+  ].sort();
+
+  // Ensure the categories are correctly passed to the CategoryFilter component
   return (
     <section className="py-32">
       <div className="container">
@@ -55,33 +65,9 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="lg:col-span-3">
-          {posts &&
-            posts.map(
-              (post) =>
-                post && (
-                  <div key={post.slug}>
-                    <Link
-                      href={`/posts/${post.slug}`}
-                      className="flex flex-col gap-3"
-                    >
-                      <h3 className="text-balance text-2xl font-semibold lg:text-3xl">
-                        {post.title}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {post.description || "No description available"}
-                      </p>
-
-                      <div className="mt-3 flex items-center gap-2 text-sm">
-                        <span className="text-muted-foreground">
-                          on {new Date(post.date).toLocaleDateString("fr-FR")}
-                        </span>
-                      </div>
-                    </Link>
-                    <Separator className="my-8" />
-                  </div>
-                )
-            )}
+        <div className="mx-auto mt-20 grid max-w-screen-xl grid-cols-1 gap-20 lg:grid-cols-4">
+          {/* Le composant CategoryFilter est utilisé ici */}
+          <CategoryFilter categories={categories} posts={posts} />
         </div>
       </div>
     </section>
