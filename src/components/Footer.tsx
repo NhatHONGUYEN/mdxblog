@@ -40,7 +40,7 @@ export default function Footer() {
           </InfiniteSlider>
 
           {/* Footer Content */}
-          <div className="flex flex-col items-center justify-between py-12 text-lg md:flex-row">
+          <div className="flex flex-col md:justify-between md:items-center md:mx-0 mx-10 py-12 text-lg md:flex-row">
             <div>© Copyright Nhat.dev 2024</div>
             <div>Heure → {time}</div>
             <Link

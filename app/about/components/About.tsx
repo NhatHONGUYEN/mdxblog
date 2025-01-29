@@ -25,7 +25,7 @@ export default function About() {
             <span className="text-muted-foreground italic">Découvrez</span> un
             peu plus sur moi.
           </h2>
-          <p className="m-auto max-w-3xl text-center text-lg lg:text-xl">
+          <p className="m-auto max-w-3xl text-center lg:text-lg">
             Bonjour, je m&apos;appelle{" "}
             <span className="text-muted-foreground italic font-semibold">
               HO NGUYEN Nhat-Quan
@@ -53,7 +53,7 @@ export default function About() {
                     className="cursor-pointer  py-5 !no-underline transition"
                   >
                     <h6
-                      className={`text-2xl font-semibold ${
+                      className={`text-lg font-semibold  italic ${
                         tab.id === activeTabId
                           ? "text-primary"
                           : "text-muted-foreground"
@@ -63,7 +63,7 @@ export default function About() {
                     </h6>
                   </AccordionTrigger>
                   <AccordionContent className="flex gap-4">
-                    <p className="mt-3 text-pretty max-w-xs md:max-w-xl md:text-lg text-muted-foreground">
+                    <p className="mt-3  max-w-xs md:max-w-xl  text-muted-foreground">
                       {tab.description}
                     </p>
                     <div className="mt-4 md:hidden">

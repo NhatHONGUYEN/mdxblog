@@ -18,14 +18,14 @@ export default function ListProjects() {
   }, []);
 
   return (
-    <div className="max-w-sm flex flex-col  justify-start items-start dark:text-muted  overflow-hidden py-16 px-8 sm:px-16 md:px-20 lg:px-24 ">
+    <div className="max-w-6xl flex flex-col gap-2   justify-start items-start dark:text-muted  overflow-hidden py-16 px-8 sm:px-16 md:px-20 lg:px-24 ">
       {tracks.map((track, index) => (
         <Link
           href={track.link}
           target="_blank"
           rel="noopener noreferrer"
           key={index}
-          className="flex italic text-muted-foreground items-center gap-2 transition-transform duration-300 ease-in-out transform hover:scale-105"
+          className="flex italic text-muted-foreground md:items-center gap-2 transition-transform duration-300 ease-in-out transform hover:scale-105"
         >
           <span className="text-xl">•</span>
           <ScrambleIn

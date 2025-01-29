@@ -1,38 +1,43 @@
 import { TabData } from "./types";
 
-export const navBurgerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact Us" },
-];
-
 export const tracks = [
   {
-    title: "Sushi-SenSation",
+    title: "Nhatflix - Avril,2024 - React, Tailwind",
+    link: "https://nhatflix.vercel.app/",
+  },
+  {
+    title: "Sushi-SenSation - Avril,2024 - React, Styled-Components",
     link: "https://sushi-sensation.vercel.app/",
   },
   {
-    title: "Coffea",
-    link: "https://coffee-shop-five-jet.vercel.app/",
+    title: "Barameyv3 - Juin,2024 - React, EmailJs",
+    link: "https://barameyv3.vercel.app/",
   },
   {
-    title: "PedroPasta",
-    link: "https://pedropasta-nhat-quans-projects.vercel.app/",
-  },
-  {
-    title: "Meals Finder",
-    link: "https://meals-finder-lake.vercel.app/",
-  },
-  {
-    title: "Portfoliov2",
+    title: "Portfoliov2 - Juillet,2024 - React, Tailwind , Framer Motion",
     link: "https://portfolio-v2-mu-neon.vercel.app/",
   },
   {
-    title: "Wakaranai",
+    title: "Wakaranai - Juillet,2024 - React, Tailwind , Zustand , Firebase",
     link: "https://wakaranai-alpha.vercel.app/",
   },
   {
-    title: "MyfinalPortfolio",
+    title: "Coffea - Décembre,2024 - Next, Tailwind , Context API",
+    link: "https://coffee-shop-five-jet.vercel.app/",
+  },
+  {
+    title:
+      "Meals Finder - Janvier,2025 - Next, Tailwind , Tanstack Query ,Typescript",
+    link: "https://meals-finder-lake.vercel.app/",
+  },
+  {
+    title:
+      "PedroPasta - Janvier,2025 - Next, Server Actions , Prisma ,Typescript",
+    link: "https://pedropasta-nhat-quans-projects.vercel.app/",
+  },
+  {
+    title:
+      "MyfinalPortfolio - Janvier,2025 - Next , Tailwind , Shadcn Ui ,Typescript",
     link: "https://myfinalportfolio-five.vercel.app/",
   },
 ];

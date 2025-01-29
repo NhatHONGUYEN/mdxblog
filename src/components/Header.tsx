@@ -20,7 +20,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="flex max-w-fit fixed top-10 inset-x-0 mx-auto bg-primary-foreground border rounded-full shadow-xl z-[5000] px-8 py-4 items-center justify-center space-x-10">
+    <div className="flex max-w-fit fixed top-10 inset-x-0 mx-auto bg-primary-foreground border rounded-full shadow-xl z-[5000] px-8 py-4 items-center justify-center space-x-6">
       {navItems.map((navItem, idx) => {
         const isActive = pathname === navItem.link;
 
