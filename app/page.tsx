@@ -11,7 +11,7 @@ export default function Home() {
       <div className="container mx-auto">
         {/* Header */}
         <div className="flex flex-col max-w-3xl mx-auto items-center gap-6 text-center">
-          <Badge variant="secondary">Blog de Reconversion</Badge>
+          <Badge variant="secondary">Mon Blog</Badge>
           <h1 className="text-4xl max-w-xs font-bold md:max-w-md lg:text-6xl">
             <span className="text-muted-foreground italic">
               {" "}

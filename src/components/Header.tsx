@@ -2,6 +2,8 @@
 
 import { Link } from "next-view-transitions";
 import { usePathname } from "next/navigation";
+import { ModeToggle } from "./ModeToggle";
+import { Button } from "./ui/button";
 
 type NavItem = {
   name: string;
@@ -18,7 +20,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="flex max-w-fit fixed top-10 inset-x-0 mx-auto border rounded-full bg-white dark:bg-black shadow-xl z-[5000] px-8 py-4 items-center justify-center space-x-10">
+    <div className="flex max-w-fit fixed top-10 inset-x-0 mx-auto bg-primary-foreground border rounded-full shadow-xl z-[5000] px-8 py-4 items-center justify-center space-x-10">
       {navItems.map((navItem, idx) => {
         const isActive = pathname === navItem.link;
 
@@ -26,16 +28,17 @@ export default function Header() {
           <Link
             key={idx}
             href={navItem.link}
-            className={`relative flex items-center text-sm ${
+            className={`relative flex items-center text-sm  ${
               isActive
-                ? " font-semibold"
-                : "text-neutral-600 dark:text-neutral-50 hover:text-neutral-500 dark:hover:text-neutral-300"
+                ? " font-bold bg-accent rounded-md scale-110 "
+                : " text-secondary-foreground "
             }`}
           >
-            {navItem.name}
+            <Button variant="ghost">{navItem.name}</Button>
           </Link>
         );
       })}
+      <ModeToggle />
     </div>
   );
 }
