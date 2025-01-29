@@ -47,11 +47,13 @@ export default async function Post({
               </Avatar>
               <div className="flex flex-col justify-center ">
                 <p className="text-xs text-muted-foreground">{date}</p>
-                <h2 className="prose ">Nhat-Quan HO NGUYEN</h2>
+                <h2 className="prose dark:text-secondary-foreground ">
+                  Nhat-Quan HO NGUYEN
+                </h2>
               </div>
             </div>
           </aside>
-          <article className="prose max-w-2xl md:mx-auto   lg:prose-xl">
+          <article className="prose max-w-2xl md:mx-auto dark:text-secondary-foreground lg:prose-xl ">
             <MDXRemote source={content} />
           </article>
         </div>
