@@ -28,7 +28,7 @@ export default function Header() {
             href={navItem.link}
             className={`relative flex items-center text-sm ${
               isActive
-                ? "text-blue-500 font-semibold"
+                ? " font-semibold"
                 : "text-neutral-600 dark:text-neutral-50 hover:text-neutral-500 dark:hover:text-neutral-300"
             }`}
           >
