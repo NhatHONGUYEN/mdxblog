@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { Ripple } from "@/components/ui/ripple";
 import Footer from "@/components/Footer";
+import { ScreenSize } from "@/components/ScreenSize";
 export const metadata: Metadata = {
   title: "Nhat.dev BLOG",
   description:
@@ -20,9 +21,10 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en">
         <body className="max-w-6xl mx-auto ">
-          <Ripple />
+          <Ripple className="hidden sm:block " />
           <Header />
           {children}
+          <ScreenSize />
           <Footer />
         </body>
       </html>
