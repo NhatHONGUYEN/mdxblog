@@ -42,7 +42,7 @@ export default function Footer() {
           {/* Footer Content */}
           <div className="flex flex-col items-center justify-between py-12 text-lg md:flex-row">
             <div>© Copyright Nhat.dev 2024</div>
-            <div>Time → {time}</div>
+            <div>Heure → {time}</div>
             <Link
               href="https://mail.google.com/mail/?view=cm&fs=1&to=hnnhat67@gmail.com"
               target="_blank"
