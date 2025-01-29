@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Ripple } from "@/components/ui/ripple";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,8 +20,8 @@ export default function RootLayout({
       <body className="max-w-6xl mx-auto ">
         <Ripple />
         <Header />
-
         {children}
+        <Footer />
       </body>
     </html>
   );
