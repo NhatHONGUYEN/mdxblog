@@ -53,7 +53,7 @@ export default function About() {
                     className="cursor-pointer  py-5 !no-underline transition"
                   >
                     <h6
-                      className={`text-xl italic font-semibold ${
+                      className={`text-2xl font-semibold ${
                         tab.id === activeTabId
                           ? "text-primary"
                           : "text-muted-foreground"
@@ -63,7 +63,7 @@ export default function About() {
                     </h6>
                   </AccordionTrigger>
                   <AccordionContent className="flex gap-4">
-                    <p className="mt-3 max-w-xs text-muted-foreground">
+                    <p className="mt-3 text-pretty max-w-xs md:max-w-xl md:text-lg text-muted-foreground">
                       {tab.description}
                     </p>
                     <div className="mt-4 md:hidden">
