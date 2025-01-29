@@ -25,8 +25,8 @@ export default function Footer() {
   }, []);
 
   return (
-    <section id="contact" className="py-32">
-      <div className="container">
+    <section className="md:py-32">
+      <div className="container mx-auto">
         <footer>
           {/* Infinite Scrolling Text */}
           <InfiniteSlider gap={40} reverse>

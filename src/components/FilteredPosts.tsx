@@ -10,7 +10,7 @@ type FilteredPostsProps = {
 
 export function FilteredPosts({ posts }: FilteredPostsProps) {
   return (
-    <div className="lg:col-span-3">
+    <div className="mx-4 sm:mx-0 lg:col-span-3">
       {posts.length > 0 ? (
         posts.map((post) => (
           <div key={post.slug}>

@@ -4,7 +4,7 @@ export default function Projects() {
   return (
     <>
       <section className="py-32">
-        <div className="container">
+        <div className="container px-4 lg:px-0">
           <div>
             <h1 className="mb-6  text-3xl font-semibold lg:text-5xl">
               Découvrez{" "}

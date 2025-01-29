@@ -25,7 +25,7 @@ export default async function Post({
 
   return (
     <section className="py-32">
-      <div className="container">
+      <div className="container px-4 md:px-0 ">
         <div className="relative flex flex-col justify-between gap-10 lg:flex-row">
           <aside className="top-10 mx-auto h-fit w-full max-w-[65ch] lg:sticky lg:max-w-96">
             <Link
@@ -51,7 +51,7 @@ export default async function Post({
               </div>
             </div>
           </aside>
-          <article className="prose max-w-2xl  lg:prose-xl">
+          <article className="prose max-w-2xl md:mx-auto   lg:prose-xl">
             <MDXRemote source={content} />
           </article>
         </div>

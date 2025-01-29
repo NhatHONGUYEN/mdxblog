@@ -1,3 +1,5 @@
+import { TabData } from "./types";
+
 export const navBurgerLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -32,5 +34,44 @@ export const tracks = [
   {
     title: "MyfinalPortfolio",
     link: "https://myfinalportfolio-five.vercel.app/",
+  },
+];
+
+export const tabsData: TabData[] = [
+  {
+    id: 1,
+    title: "Moi de tous les jours",
+    imageSrc: [
+      {
+        src: "https://res.cloudinary.com/nhatflux/image/upload/f_webp/idii5lwwpxknebuusbqe",
+        alt: "Moi de tous les jours souriant.",
+      },
+    ],
+    description:
+      "Cette image me représente dans ma vie quotidienne, toujours avec le sourire. C'est un reflet de ma personnalité joyeuse et optimiste, prêt à affronter chaque jour avec enthousiasme.",
+  },
+  {
+    id: 2,
+    title: "Quand j'étais artiste danseur.",
+    imageSrc: [
+      {
+        src: "https://res.cloudinary.com/nhatflux/image/upload/f_webp/wglxef4rlituz4et6op2",
+        alt: "Moi quand j'étais artiste danseur.",
+      },
+    ],
+    description:
+      "Ici, vous pouvez me voir dans ma période d'artiste danseur. La danse a toujours été une passion pour moi, et cette image capture un moment où j'exprimais ma créativité et mon amour pour cet art.",
+  },
+  {
+    id: 3,
+    title: "Comme je suis actuellement",
+    imageSrc: [
+      {
+        src: "https://res.cloudinary.com/nhatflux/image/upload/f_webp/uxbkryyv9zq9ywanxllw",
+        alt: "Moi actuellement en tant que développeur full stack.",
+      },
+    ],
+    description:
+      "Aujourd'hui, je suis un développeur full stack. J'ai trouvé ma passion pour la programmation et la technologie, et je m'efforce de devenir un meilleur développeur chaque jour. ",
   },
 ];

@@ -21,7 +21,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en">
         <body className="max-w-6xl mx-auto ">
-          <Ripple className="hidden sm:block " />
+          <Ripple className="hidden md:block " />
           <Header />
           {children}
           <ScreenSize />

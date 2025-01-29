@@ -30,3 +30,15 @@ export type TagProps = {
   selectedTag: string | null;
   setSelectedTag: (tag: string | null) => void;
 };
+
+export type ImageSrc = {
+  src: string;
+  alt: string;
+};
+
+export type TabData = {
+  id: number;
+  title: string;
+  imageSrc: ImageSrc[];
+  description: string;
+};
