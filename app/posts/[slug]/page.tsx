@@ -53,7 +53,7 @@ export default async function Post({
               </div>
             </div>
           </aside>
-          <article className="prose max-w-2xl md:mx-auto dark:text-secondary-foreground lg:prose-xl ">
+          <article className=" max-w-2xl md:mx-auto  dark:prose-invert   ">
             <MDXRemote source={content} />
           </article>
         </div>
