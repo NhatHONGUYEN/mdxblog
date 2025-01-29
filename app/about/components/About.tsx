@@ -22,8 +22,8 @@ export default function About() {
       <div className="container px-4 mx-auto">
         <div className="mx-auto mb-24 max-w-xl">
           <h2 className="mb-6 text-center text-3xl font-semibold lg:text-5xl">
-            <span className="text-muted-foreground">Découvrez</span> un peu plus
-            sur moi.
+            <span className="text-muted-foreground italic">Découvrez</span> un
+            peu plus sur moi.
           </h2>
           <p className="m-auto max-w-3xl text-center text-lg lg:text-xl">
             Bonjour, je m&apos;appelle{" "}
