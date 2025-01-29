@@ -33,7 +33,7 @@ export default function Footer() {
             {Array(5)
               .fill("nhat.dev")
               .map((text, idx) => (
-                <p key={idx} className="text-7xl font-extrabold">
+                <p key={idx} className="text-7xl  font-extrabold">
                   {text}
                 </p>
               ))}
