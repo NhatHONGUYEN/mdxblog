@@ -22,6 +22,8 @@ export default function ListProjects() {
       {tracks.map((track, index) => (
         <Link
           href={track.link}
+          target="_blank"
+          rel="noopener noreferrer"
           key={index}
           className="flex items-center gap-2 transition-transform duration-300 ease-in-out transform hover:scale-105"
         >
