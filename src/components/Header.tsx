@@ -6,7 +6,7 @@ export default function Header() {
   const navItems = [
     { name: "nhat.dev", link: "/" },
     { name: "About", link: "/about" },
-    { name: "Contact Us", link: "/contact" },
+    { name: "Contact", link: "/contact" },
   ];
   return (
     <div className="relative  w-full">
