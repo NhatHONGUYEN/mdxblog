@@ -1,6 +1,6 @@
 import { FilteredPostsProps } from "@/lib/types";
-import NoPostFound from "./NoPostFound";
 import PostArticle from "./PostArticle";
+import NoPostFound from "./NoPostFound";
 
 export function FilteredPosts({ posts }: FilteredPostsProps) {
   return (

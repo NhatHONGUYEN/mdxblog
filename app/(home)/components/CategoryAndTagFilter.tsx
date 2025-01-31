@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Category } from "./(category)/Category";
 
-import { FilteredPosts } from "../../../src/components/FilteredPosts";
+import { FilteredPosts } from "./FilteredPosts";
 import { FilterProps } from "@/lib/types";
 import { filterPosts } from "@/lib/utils";
 import { Tag } from "./(tags)/Tag";

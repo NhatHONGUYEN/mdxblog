@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "./ui/button";
+import { Button } from "../../../src/components/ui/button";
 import { Post } from "@/lib/types";
 
 export default function PostArticle({ post }: { post: Post }) {
