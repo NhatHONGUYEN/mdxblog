@@ -12,30 +12,8 @@ export const metadata: Metadata = {
   title: "Nhat.dev BLOG",
   description:
     "Bienvenue sur mon blog ! Retrouvez des articles sur mon évolution pour devenir développeur. Je partagerai mes ressentis, mes difficultés, mes stacks et autres.",
-
-  icons: {
-    icon: "/photo-profil.jpg", // Favicon principal
-    shortcut: "/photo-profil.jpg", // Icône de raccourci
-    apple: "/photo-profil.jpg", // Icône pour iOS
-  },
-
-  openGraph: {
-    title: "Nhat.dev",
-    description:
-      "Bienvenue sur mon blog ! Retrouvez des articles sur mon évolution pour devenir développeur. Je partagerai mes ressentis, mes difficultés, mes stacks et autres.",
-    url: "https://nhathnblog.vercel.app/",
-    siteName: "Nhat.dev",
-    images: [
-      {
-        url: "/photo-profil.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Nhat.dev",
-      },
-    ],
-    type: "website",
-  },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className="max-w-6xl mx-auto ">
           <ThemeProvider
             attribute="class"
