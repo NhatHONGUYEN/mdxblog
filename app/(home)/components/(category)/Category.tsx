@@ -1,6 +1,6 @@
 import { CategoryProps } from "@/lib/types";
 import { ButtonCategory } from "./ButtonCategory";
-import { CATEGORIES_TITLE } from "@/lib/constants";
+import { UI_TEXTS } from "../../../../src/lib/constants";
 
 export function Category({
   categories,
@@ -13,7 +13,9 @@ export function Category({
 
   return (
     <>
-      <h3 className="mb-2 text-lg font-semibold">{CATEGORIES_TITLE}</h3>
+      <h3 className="mb-2 text-lg font-semibold">
+        {UI_TEXTS.CATEGORIES_TITLE}
+      </h3>
       <div className="flex flex-col gap-2">
         <ButtonCategory
           key="all-categories"
