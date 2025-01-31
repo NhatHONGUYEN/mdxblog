@@ -1,4 +1,4 @@
-import { TabData } from "./types";
+import { NavItem, TabData } from "./types";
 
 export const tracks = [
   {
@@ -79,4 +79,17 @@ export const tabsData: TabData[] = [
     description:
       "Aujourd'hui, je suis un développeur full stack. J'ai trouvé ma passion pour la programmation et la technologie, et je m'efforce de devenir un meilleur développeur chaque jour. ",
   },
+];
+
+export const textLoopItems = [
+  "Mon Journal",
+  "Mes Astuces",
+  "Mes Ressentis",
+  "Mes Galères",
+];
+
+export const navItems: NavItem[] = [
+  { name: "nhat.dev", link: "/" },
+  { name: "About", link: "/about" },
+  { name: "Projects", link: "/projects" },
 ];

@@ -42,3 +42,12 @@ export type TabData = {
   imageSrc: ImageSrc[];
   description: string;
 };
+
+export type NavItem = {
+  name: string;
+  link: string;
+};
+
+export type FilteredPostsProps = {
+  posts: Post[];
+};

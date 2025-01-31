@@ -1,12 +1,7 @@
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-
-import { Post } from "@/lib/types";
+import { FilteredPostsProps } from "@/lib/types";
 import { Button } from "./ui/button";
-
-type FilteredPostsProps = {
-  posts: Post[];
-};
 
 export function FilteredPosts({ posts }: FilteredPostsProps) {
   return (

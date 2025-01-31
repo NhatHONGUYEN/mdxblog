@@ -24,7 +24,7 @@ export default function RootLayout({
         <body className="max-w-6xl mx-auto ">
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
