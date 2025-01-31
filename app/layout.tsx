@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   title: "Nhat.dev BLOG",
   description:
     "Bienvenue sur mon blog ! Retrouvez des articles sur mon évolution pour devenir développeur. Je partagerai mes ressentis, mes difficultés, mes stacks et autres.",
+
+  icons: {
+    icon: "/photo-profil.jpg", // Favicon principal
+    shortcut: "/photo-profil.jpg", // Icône de raccourci
+    apple: "/photo-profil.jpg", // Icône pour iOS
+  },
+
   openGraph: {
     title: "Nhat.dev",
     description:
@@ -20,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Nhat.dev",
     images: [
       {
-        url: "./photo-profil.jpg",
+        url: "/photo-profil.jpg",
         width: 1200,
         height: 800,
         alt: "Nhat.dev",
@@ -29,7 +36,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
