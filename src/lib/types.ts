@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export type Post = {
   slug: string;
   title: string;
@@ -58,4 +60,31 @@ export type contentProps = {
 export type PostHeaderProps = {
   title: string;
   date: string;
+};
+
+export type AboutMainImageProps = {
+  activeImage: { src: string; alt: string }[];
+};
+
+export type AboutAccordionContentProps = {
+  description: string;
+  imageSrc: { src: string; alt: string }[];
+};
+
+export type Tab = {
+  id: number;
+  title: string;
+  description: string;
+  imageSrc: { src: string; alt: string }[];
+};
+
+export type AboutAccordionItemProps = {
+  tab: Tab;
+  activeTabId: number | null;
+  setActiveTabId: Dispatch<SetStateAction<number | null>>;
+};
+
+export type AboutAccordionProps = {
+  activeTabId: number | null;
+  setActiveTabId: Dispatch<SetStateAction<number | null>>;
 };
