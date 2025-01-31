@@ -1,11 +1,8 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { AUTHOR_IMAGE_URL, AUTHOR_NAME, RETURN_TO_HOME } from "@/lib/constants";
+import { PostHeaderProps } from "@/lib/data";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
-
-type PostHeaderProps = {
-  title: string;
-  date: string;
-};
 
 export default function PostHeader({ title, date }: PostHeaderProps) {
   return (
@@ -15,22 +12,19 @@ export default function PostHeader({ title, date }: PostHeaderProps) {
         className="mb-5 flex items-center gap-1 text-muted-foreground hover:text-primary"
       >
         <ChevronLeft className="h-full w-4" />
-        Return to home
+        {RETURN_TO_HOME}
       </Link>
       <div className="mb-5 text-balance text-3xl font-bold lg:text-4xl">
         {title}
       </div>
       <div className="flex gap-3">
         <Avatar className="size-20 rounded-full">
-          <AvatarImage
-            src="https://res.cloudinary.com/nhatflux/image/upload/c_crop,g_auto,h_800,w_800/idii5lwwpxknebuusbqe"
-            alt="placeholder"
-          />
+          <AvatarImage src={AUTHOR_IMAGE_URL} alt="placeholder" />
         </Avatar>
         <div className="flex flex-col justify-center ">
           <p className="text-xs text-muted-foreground">{date}</p>
           <h2 className="prose dark:text-secondary-foreground ">
-            Nhat-Quan HO NGUYEN
+            {AUTHOR_NAME}
           </h2>
         </div>
       </div>

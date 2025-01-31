@@ -93,3 +93,12 @@ export const navItems: NavItem[] = [
   { name: "About", link: "/about" },
   { name: "Projects", link: "/projects" },
 ];
+
+export type contentProps = {
+  content: string;
+};
+
+export type PostHeaderProps = {
+  title: string;
+  date: string;
+};
