@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Category } from "./Category";
-import { Tag } from "./Tag";
-import { FilteredPosts } from "./FilteredPosts";
+import { Category } from "./(category)/Category";
+
+import { FilteredPosts } from "../../../src/components/FilteredPosts";
 import { FilterProps } from "@/lib/types";
 import { filterPosts } from "@/lib/utils";
+import { Tag } from "./(tags)/Tag";
 
 export function CategoryAndTagFilter({ categories, tags, posts }: FilterProps) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);

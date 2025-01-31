@@ -1,4 +1,4 @@
-import { CategoryAndTagFilter } from "@/components/CategoryAndTagFilter";
+import { CategoryAndTagFilter } from "./(home)/components/CategoryAndTagFilter";
 import { useGetPosts } from "./hooks/useGetPosts";
 import HeaderHome from "./(home)/components/HeaderHome";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import ScrambleIn, { ScrambleInHandle } from "@/components/fancy/scramble-in";
+import ScrambleIn, { ScrambleInHandle } from "@/components/ui/scramble-in";
 import { tracks } from "@/lib/data";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
