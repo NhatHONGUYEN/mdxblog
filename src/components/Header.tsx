@@ -2,9 +2,10 @@
 
 import { Link } from "next-view-transitions";
 import { usePathname } from "next/navigation";
-import { ModeToggle } from "./ModeToggle";
+
 import { Button } from "./ui/button";
 import { navItems } from "@/lib/data";
+import { ModeToggle } from "./ui/ModeToggle";
 
 export default function Header() {
   const pathname = usePathname(); // Récupérer le chemin actuel
