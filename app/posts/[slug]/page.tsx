@@ -53,7 +53,7 @@ export default async function Post({
               </div>
             </div>
           </aside>
-          <article className=" max-w-2xl md:mx-auto  dark:prose-invert   ">
+          <article className=" max-w-2xl md:mx-auto prose prose-base  mt-16  dark:prose-invert   ">
             <MDXRemote source={content} />
           </article>
         </div>
