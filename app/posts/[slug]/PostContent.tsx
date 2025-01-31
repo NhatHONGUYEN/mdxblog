@@ -1,4 +1,4 @@
-import { contentProps } from "@/lib/data";
+import { contentProps } from "@/lib/types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 export default function PostContent({ content }: contentProps) {

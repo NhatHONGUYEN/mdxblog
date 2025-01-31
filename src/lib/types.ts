@@ -51,3 +51,11 @@ export type NavItem = {
 export type FilteredPostsProps = {
   posts: Post[];
 };
+export type contentProps = {
+  content: string;
+};
+
+export type PostHeaderProps = {
+  title: string;
+  date: string;
+};

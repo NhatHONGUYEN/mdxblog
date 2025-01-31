@@ -1,6 +1,6 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { AUTHOR_IMAGE_URL, AUTHOR_NAME, RETURN_TO_HOME } from "@/lib/constants";
-import { PostHeaderProps } from "@/lib/data";
+import { PostHeaderProps } from "@/lib/types";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
