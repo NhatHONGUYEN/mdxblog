@@ -2,7 +2,6 @@
 
 import { Link } from "next-view-transitions";
 import { usePathname } from "next/navigation";
-
 import { Button } from "./ui/button";
 import { navItems } from "@/lib/data";
 import { ModeToggle } from "./ui/ModeToggle";

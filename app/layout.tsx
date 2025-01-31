@@ -4,7 +4,7 @@ import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Ripple } from "@/components/ui/ripple";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 // import { ScreenSize } from "@/components/ScreenSize";
 export const metadata: Metadata = {
