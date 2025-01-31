@@ -1,4 +1,4 @@
-import { NavItem, TabData } from "./types";
+import { NavItem } from "./types";
 
 export const tracks = [
   {
@@ -42,7 +42,7 @@ export const tracks = [
   },
 ];
 
-export const tabsData: TabData[] = [
+export const tabsData = [
   {
     id: 1,
     title: "Moi de tous les jours",
