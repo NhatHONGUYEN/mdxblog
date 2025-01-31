@@ -1,5 +1,6 @@
 import { TagProps } from "@/lib/types";
 import { ButtonTag } from "./ButtonTag";
+import { TAGS_TITLE } from "@/lib/constants";
 
 export function Tag({ tags, selectedTag, setSelectedTag }: TagProps) {
   const handleTagClick = (tag: string) => {
@@ -7,8 +8,8 @@ export function Tag({ tags, selectedTag, setSelectedTag }: TagProps) {
   };
 
   return (
-    <div>
-      <h3 className="mb-2 text-lg font-semibold">Tags</h3>
+    <>
+      <h3 className="mb-2 text-lg font-semibold">{TAGS_TITLE}</h3>
       <div className="flex flex-wrap gap-2">
         <ButtonTag
           key="all-tags"
@@ -25,6 +26,6 @@ export function Tag({ tags, selectedTag, setSelectedTag }: TagProps) {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }

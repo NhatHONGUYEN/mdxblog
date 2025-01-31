@@ -1,3 +1,4 @@
+// constants.js
 export const AUTHOR_NAME = "Nhat-Quan HO NGUYEN";
 export const RETURN_TO_HOME = "Return to home";
 export const AUTHOR_IMAGE_URL =
@@ -7,3 +8,6 @@ export const EMAIL_LINK =
   "https://mail.google.com/mail/?view=cm&fs=1&to=hnnhat67@gmail.com";
 export const EMAIL_ADDRESS = "hnnhat67@gmail.com";
 export const INFINITE_SLIDER_TEXT = "nhat.dev";
+export const PARIS_TIME_LABEL = "Heure → ";
+export const CATEGORIES_TITLE = "Catégories";
+export const TAGS_TITLE = "Tags";

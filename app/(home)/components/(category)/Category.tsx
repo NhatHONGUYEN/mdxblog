@@ -1,5 +1,6 @@
 import { CategoryProps } from "@/lib/types";
 import { ButtonCategory } from "./ButtonCategory";
+import { CATEGORIES_TITLE } from "@/lib/constants";
 
 export function Category({
   categories,
@@ -11,8 +12,8 @@ export function Category({
   };
 
   return (
-    <div>
-      <h3 className="mb-2 text-lg font-semibold">Catégories</h3>
+    <>
+      <h3 className="mb-2 text-lg font-semibold">{CATEGORIES_TITLE}</h3>
       <div className="flex flex-col gap-2">
         <ButtonCategory
           key="all-categories"
@@ -29,6 +30,6 @@ export function Category({
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }

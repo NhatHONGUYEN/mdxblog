@@ -1,6 +1,7 @@
 // ParisTime.js
 "use client";
 
+import { PARIS_TIME_LABEL } from "@/lib/constants";
 import { useEffect, useState } from "react";
 
 export default function ParisTime() {
@@ -23,5 +24,10 @@ export default function ParisTime() {
     return () => clearInterval(intervalId);
   }, []);
 
-  return <div>Heure → {time}</div>;
+  return (
+    <div>
+      {PARIS_TIME_LABEL}
+      {time}
+    </div>
+  );
 }
