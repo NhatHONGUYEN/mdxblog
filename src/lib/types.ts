@@ -19,7 +19,7 @@ export type Post = {
   slug: string;
   title: string;
   date: string;
-  description?: string; // Nullable avec `?`
+  description: string | null;
   tags: string[];
   category: string | string[];
 };
@@ -36,7 +36,6 @@ export type ButtonProps = {
   isSelected: boolean;
   onClick: () => void;
 };
-
 // 🔹 Types pour le filtrage des posts
 export type FilterProps = {
   categories: string[];
@@ -57,8 +56,8 @@ export type CategoryProps = {
 
 export type TagProps = {
   tags: string[];
-  selectedTag: string | null;
-  setSelectedTag: (tag: string | null) => void;
+  selectedTags: string[];
+  setSelectedTags: (tags: string[]) => void;
 };
 
 // 🔹 Types pour le contenu des articles

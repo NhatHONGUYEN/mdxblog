@@ -2,9 +2,13 @@ import { TagProps } from "@/lib/types";
 import { ButtonTag } from "./ButtonTag";
 import { UI_TEXTS } from "../../../../src/lib/constants";
 
-export function Tag({ tags, selectedTag, setSelectedTag }: TagProps) {
+export function Tag({ tags, selectedTags, setSelectedTags }: TagProps) {
   const handleTagClick = (tag: string) => {
-    setSelectedTag(selectedTag === tag ? null : tag);
+    if (selectedTags.includes(tag)) {
+      setSelectedTags(selectedTags.filter((t) => t !== tag));
+    } else {
+      setSelectedTags([...selectedTags, tag]);
+    }
   };
 
   return (
@@ -14,14 +18,14 @@ export function Tag({ tags, selectedTag, setSelectedTag }: TagProps) {
         <ButtonTag
           key="all-tags"
           label="Tous les tags"
-          isSelected={selectedTag === null}
-          onClick={() => setSelectedTag(null)}
+          isSelected={selectedTags.length === 0}
+          onClick={() => setSelectedTags([])}
         />
         {tags.map((tag) => (
           <ButtonTag
             key={tag}
             label={tag}
-            isSelected={selectedTag === tag}
+            isSelected={selectedTags.includes(tag)}
             onClick={() => handleTagClick(tag)}
           />
         ))}
