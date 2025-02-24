@@ -3,34 +3,15 @@
 import { useState } from "react";
 import { Category } from "./(category)/Category";
 import { FilteredPosts } from "./FilteredPosts";
-import { FilterProps, Post } from "@/lib/types";
+import { FilterProps } from "@/lib/types";
 import { Tag } from "./(tags)/Tag";
-
-function filterPosts(
-  posts: Post[],
-  selectedCategory: string | null,
-  selectedTags: string[]
-): Post[] {
-  return posts.filter((post) => {
-    const matchesCategory =
-      !selectedCategory ||
-      (Array.isArray(post.category)
-        ? post.category.includes(selectedCategory)
-        : post.category === selectedCategory);
-
-    const matchesTags =
-      selectedTags.length === 0 ||
-      selectedTags.some((tag) => post.tags.includes(tag));
-
-    return matchesCategory && matchesTags;
-  });
-}
+import { useFilteredPosts } from "../../hooks/useFilteredPosts";
 
 export function CategoryAndTagFilter({ categories, tags, posts }: FilterProps) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-  const filteredPosts = filterPosts(posts, selectedCategory, selectedTags);
+  const filteredPosts = useFilteredPosts(posts, selectedCategory, selectedTags);
 
   return (
     <div className="mx-auto mt-32 grid grid-cols-1 gap-20 lg:grid-cols-4">
