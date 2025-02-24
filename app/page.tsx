@@ -1,5 +1,5 @@
 import { CategoryAndTagFilter } from "./(home)/components/CategoryAndTagFilter";
-import { useGetPosts } from "./hooks/useGetPosts";
+import { useGetPosts } from "../src/lib/hooks/useGetPosts";
 import HeaderHome from "./(home)/components/HeaderHome";
 
 export default function Home() {

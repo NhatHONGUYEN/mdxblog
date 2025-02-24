@@ -15,6 +15,35 @@ export const metadata: Metadata = {
   icons: {
     icon: "/404-page-not-found.svg",
   },
+  openGraph: {
+    title: "Nhat.dev BLOG",
+    description:
+      "Bienvenue sur mon blog ! Retrouvez des articles sur mon évolution pour devenir développeur. Je partagerai mes ressentis, mes difficultés, mes stacks et autres.",
+    url: "https://nhathnblog.vercel.app/",
+    siteName: "Nhat.dev BLOG",
+    images: [
+      {
+        url: "https://nhathnblog.vercel.app/cartoon-smoke-with-kid.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Nhat.dev BLOG - Bienvenue sur mon blog !.",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nhat.dev BLOG",
+    description:
+      "Bienvenue sur mon blog ! Retrouvez des articles sur mon évolution pour devenir développeur. Je partagerai mes ressentis, mes difficultés, mes stacks et autres.",
+    images: [
+      {
+        url: "https://nhathnblog.vercel.app/cartoon-smoke-with-kid.jpg",
+        alt: "Nhat.dev BLOG - Bienvenue sur mon blog !.",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

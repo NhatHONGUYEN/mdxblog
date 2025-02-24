@@ -5,7 +5,7 @@ import { Category } from "./(category)/Category";
 import { FilteredPosts } from "./FilteredPosts";
 import { FilterProps } from "@/lib/types";
 import { Tag } from "./(tags)/Tag";
-import { useFilteredPosts } from "../../hooks/useFilteredPosts";
+import { useFilteredPosts } from "../../../src/lib/hooks/useFilteredPosts";
 
 export function CategoryAndTagFilter({ categories, tags, posts }: FilterProps) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);

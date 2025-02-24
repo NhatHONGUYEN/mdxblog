@@ -10,9 +10,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https" as const,
-        hostname: "res.cloudinary.com", // Domaine autorisé
-        port: "", // Facultatif (laisser vide pour le port par défaut)
-        pathname: "/**", // Autoriser toutes les images à partir de ce domaine
+        hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: "https",
+        hostname: "nhathnblog.vercel.app",
       },
     ],
   },
