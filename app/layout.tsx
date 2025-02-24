@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Nhat.dev BLOG",
   description:
     "Bienvenue sur mon blog ! Retrouvez des articles sur mon évolution pour devenir développeur. Je partagerai mes ressentis, mes difficultés, mes stacks et autres.",
+  icons: {
+    icon: "/404-page-not-found.svg",
+  },
 };
 
 export default function RootLayout({
