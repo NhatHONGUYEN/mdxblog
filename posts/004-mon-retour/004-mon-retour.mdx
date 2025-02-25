@@ -1,0 +1,70 @@
+---
+title: "Mon retour sur Next.js : partie 1"
+description: "Découvrez mon expérience avec Next.js dans un projet d'anime, où j'ai exploré les défis et les solutions pour créer une application performante et réactive."
+
+date: "2025-02-25"
+tags: ["Next.js", "Tanstack", "API"]
+category: "projets"
+---
+
+# Mon Retour sur Next.js, Tanstack et l'API JIKAI
+
+Après être tombé malade en début de mois, probablement à cause de la fatigue accumulée par mes challenges hebdomadaires pour apprendre de nouvelles stacks, j'ai décidé de reprendre en douceur avec un projet simple : un site d'anime.
+
+> Honnêtement, je voulais juste quelque chose de simple pour me remettre en selle.
+
+Mais comme souvent, les choses simples peuvent vite devenir complexes. J'ai commencé à vouloir ajouter des fonctionnalités, et c'est là que j'ai décidé d'utiliser une vraie API pour récupérer les données.
+
+## Pourquoi Tanstack Query ?
+
+1. **Performance et Cache** : Avec _Tanstack Query_, j'ai pu gérer les requêtes API de manière efficace. Bien que le premier chargement prenne du temps, les données sont ensuite mises en cache, ce qui accélère les requêtes suivantes. C'était particulièrement utile avec la base de données de l'API Jikan, qui contient plus de 1000 animes.
+
+2. **Gestion des Erreurs** : _Tanstack Query_ permet de gérer les erreurs de manière élégante, ce qui m'a évité de me perdre dans mon code. Les hooks comme `useQuery` m'ont permis de structurer mes requêtes et de gérer les états de chargement et d'erreur de manière claire.
+
+### Exemple de Code
+
+Voici comment j'ai utilisé _Tanstack Query_ pour récupérer les données de l'API :
+
+```javascript
+import { useQuery } from "@tanstack/react-query";
+
+const fetchAnime = async () => {
+  const res = await fetch("https://api.jikan.moe/v4/anime");
+  return res.json();
+};
+
+const AnimeList = () => {
+  const { data, error, isLoading } = useQuery(["anime"], fetchAnime);
+
+  if (isLoading) return <div>Chargement...</div>;
+  if (error) return <div>Erreur : {error.message}</div>;
+
+  return (
+    <div>
+      <h1>Liste des Animes :</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+};
+
+export default AnimeList;
+```
+
+## La Complexité des Props
+
+Au début, j'ai créé une simple grille pour afficher les animes. Mais en découvrant les _Bento Grids_, j'ai voulu essayer ce style plus compact. Cependant, gérer les props envoyées au composant parent (mon _BentoGrid_) est vite devenu un casse-tête. Chaque nouvelle fonctionnalité ajoutait de la complexité, et il fallait constamment ajuster les props pour que tout fonctionne correctement.
+
+Chaque carré de la grille devait afficher ses propres données, ce qui nécessitait plusieurs requêtes API :
+
+- Un fetch pour obtenir les informations de base de chaque anime.
+- Un fetch spécifique pour récupérer les informations des personnages.
+- Un fetch pour les acteurs de doublage.
+- Un fetch pour les épisodes en fonction de l'ID de l'anime.
+
+Gérer toutes ces requêtes et les intégrer correctement dans les composants a été un véritable défi, mais cela m'a permis d'afficher des informations complètes et détaillées pour chaque anime.
+
+Si vous voulez voir à quoi ressemblent les données, vous pouvez consulter l'API ici : [https://api.jikan.moe/v4/anime](https://api.jikan.moe/v4/anime).
+
+Je voulais faire simple pour continuer sur mon challenge d'un projet par semaine, malheureusement ça ne s'est pas passé comme prévu.
+
+## J'étais loin d'imaginer la suite que je raconterai la prochaine fois.

@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "../../../src/components/ui/button";
 import { Post } from "@/lib/types";
+import { Badge } from "@/components/ui/badge";
 
 export default function PostArticle({ post }: { post: Post }) {
   return (
     <article className="mb-8">
       <header className="mb-2">
-        <span className="text-muted-foreground">
+        <span className="text-muted-foreground italic text-sm">
           {new Date(post.date).toLocaleDateString("fr-FR")}
         </span>
       </header>
@@ -24,13 +24,13 @@ export default function PostArticle({ post }: { post: Post }) {
         {post.tags.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
             {post.tags.map((tag) => (
-              <Button
+              <Badge
                 key={tag}
                 className="rounded-full cursor-pointer"
                 variant="secondary"
               >
                 {tag}
-              </Button>
+              </Badge>
             ))}
           </div>
         )}

@@ -40,6 +40,11 @@ export const tracks = [
       "MyfinalPortfolio - Janvier,2025 - Next , Tailwind , Shadcn Ui ,Typescript",
     link: "https://myfinalportfolio-five.vercel.app/",
   },
+  {
+    title:
+      "Anima - Février,2025 - Next , Tailwind , Shadcn Ui ,Typescript , Auth , Fuse , Tanstack Query ",
+    link: "https://anima-dusky.vercel.app/",
+  },
 ];
 
 export const tabsData = [
