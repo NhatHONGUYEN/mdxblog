@@ -16,7 +16,7 @@ export default function HeaderHome() {
         <span className="text-muted-foreground italic">Bienvenue</span> sur mon
         blog !
       </h1>
-      <p className="lg:text-lg">
+      <p className="lg:text-lg md:w-[500px] lg:w-auto mx-8">
         Si tu envisages de changer de carrière ou de te lancer dans un nouveau
         projet, tu es au bon endroit. Ici, je partage mes conseils, mes
         expériences et tout ce qui peut t&apos;aider à avancer sereinement dans
